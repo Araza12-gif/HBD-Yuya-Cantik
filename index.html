@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yuya 🎀</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: #805477;
+  background: linear-gradient(135deg,#ffe1ef,#f4e1ff,#dff5ff,#fff0c9);
+  background-size: 300% 300%;
+  animation: bg 12s ease infinite;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+@keyframes bg {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+h1,h2,h3 { font-family:'Baloo 2',cursive; }
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 900;
+  transition: .25s;
+}
+button:hover { transform: translateY(-4px) scale(1.04); }
+
+.ribbon {
+  position: fixed;
+  z-index: 0;
+  font-size: 35px;
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-22px) rotate(12deg); }
+}
+
+.sparkle {
+  position: fixed;
+  pointer-events:none;
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity:.3; transform:scale(.7); }
+  to { opacity:1; transform:scale(1.3); }
+}
+
+.page {
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:auto;
+  padding:35px 20px 65px;
+}
+
+.tag {
+  display:inline-block;
+  background:white;
+  border:2px dashed #f5a8ca;
+  padding:9px 19px;
+  border-radius:30px;
+  color:#d77ba9;
+  font-weight:900;
+  box-shadow:0 5px 0 #f8c6dc;
+}
+
+h1 {
+  font-size:clamp(45px,10vw,78px);
+  line-height:1;
+  color:#e77bab;
+  text-shadow:3px 4px white, 6px 7px #d9b5f1;
+  margin:25px 0 8px;
+}
+
+.subtitle {
+  font-size:17px;
+  font-weight:800;
+  color:#9872a7;
+}
+
+.hero-art {
+  margin:35px auto 20px;
+  width:260px;
+  height:230px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.moon {
+  position:absolute;
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  background:#fff5c9;
+  box-shadow:0 0 0 13px #ffffff65,0 12px 30px #d7a8d566;
+}
+
+.bunny {
+  position:relative;
+  z-index:2;
+  font-size:125px;
+  filter:drop-shadow(0 8px 4px #d7a8d5);
+  animation:bounce 2s infinite ease-in-out;
+  cursor:pointer;
+}
+@keyframes bounce {
+  0%,100% { transform:translateY(0) rotate(-5deg); }
+  50% { transform:translateY(-15px) rotate(5deg); }
+}
+
+.bow {
+  position:absolute;
+  z-index:3;
+  top:12px;
+  right:25px;
+  font-size:60px;
+  transform:rotate(18deg);
+  animation:wiggle 2s infinite;
+}
+@keyframes wiggle {
+  0%,100% { transform:rotate(15deg); }
+  50% { transform:rotate(-15deg); }
+}
+
+.card {
+  background:#ffffffdc;
+  border:3px solid white;
+  border-radius:30px;
+  padding:25px 20px;
+  margin:25px 0;
+  box-shadow:0 12px 25px #bb8fc833;
+}
+
+.card h2 {
+  color:#df83b1;
+  font-size:29px;
+  margin:0 0 8px;
+}
+
+.card p {
+  line-height:1.8;
+  font-weight:700;
+  font-size:15px;
+}
+
+.primary {
+  background:linear-gradient(135deg,#ff9ec7,#c9a2ff);
+  color:white;
+  border-radius:30px;
+  padding:14px 25px;
+  font-size:15px;
+  box-shadow:0 6px 0 #d18dbd;
+  margin:8px;
+}
+
+.secondary {
+  background:#fff0a9;
+  color:#a77b51;
+  border-radius:30px;
+  padding:13px 23px;
+  box-shadow:0 5px 0 #e8d17f;
+  margin:8px;
+}
+
+.gift {
+  font-size:100px;
+  cursor:pointer;
+  display:inline-block;
+  animation:gift 1.5s infinite;
+}
+@keyframes gift {
+  0%,100% { transform:rotate(-7deg) scale(1); }
+  50% { transform:rotate(7deg) scale(1.12); }
+}
+
+.hidden { display:none; }
+
+.cake {
+  position:relative;
+  width:180px;
+  height:125px;
+  margin:40px auto 15px;
+}
+.cake-top {
+  position:absolute;
+  top:35px;
+  width:180px;
+  height:40px;
+  background:#fff0bd;
+  border-radius:50%;
+  border:5px solid #fff;
+  z-index:2;
+}
+.cake-body {
+  position:absolute;
+  top:52px;
+  width:180px;
+  height:65px;
+  background:linear-gradient(#ffb3d1,#f58db8);
+  border-radius:0 0 20px 20px;
+  border:4px solid white;
+}
+.cake-body:after {
+  content:"♡  ♡  ♡";
+  position:absolute;
+  top:18px;
+  width:100%;
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+}
+.candle {
+  position:absolute;
+  top:0;
+  left:83px;
+  height:43px;
+  width:14px;
+  border-radius:5px;
+  background:repeating-linear-gradient(45deg,#fff 0 5px,#bda4ff 5px 10px);
+  z-index:4;
+}
+.flame {
+  position:absolute;
+  top:-24px;
+  left:0;
+  width:14px;
+  height:22px;
+  background:#ffb52e;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  box-shadow:0 0 18px #ffcf53;
+  animation:flame .5s infinite alternate;
+}
+@keyframes flame {
+  to { transform:rotate(-40deg) scale(1.15); }
+}
+.cake-plate {
+  position:absolute;
+  bottom:0;
+  left:-15px;
+  width:210px;
+  height:13px;
+  background:#c9a2ff;
+  border-radius:50%;
+}
+
+.letter {
+  text-align:left;
+  background:#fff8fc;
+  border:2px dashed #f1a9cb;
+  border-radius:22px;
+  padding:23px;
+  line-height:1.9;
+  font-weight:700;
+  margin-top:20px;
+  animation:appear .6s ease;
+}
+@keyframes appear {
+  from { opacity:0; transform:translateY(15px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.footer {
+  margin-top:35px;
+  font-size:13px;
+  font-weight:800;
+  color:#a77eae;
+}
+
+.confetti {
+  position:fixed;
+  top:-20px;
+  z-index:10;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+@keyframes fall {
+  to { transform:translateY(110vh) rotate(720deg); opacity:0; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="ribbon" style="top:8%;left:5%">🎀</div>
+<div class="ribbon" style="top:23%;right:6%;animation-delay:1s">🎀</div>
+<div class="ribbon" style="top:55%;left:4%;animation-delay:2s">💗</div>
+<div class="ribbon" style="top:75%;right:5%;animation-delay:.5s">🎀</div>
+<div class="ribbon" style="top:90%;left:12%;animation-delay:1.5s">🧁</div>
+<div class="ribbon" style="top:40%;right:10%;animation-delay:2s">🍬</div>
+
+<div class="sparkle" style="top:12%;left:25%">✨</div>
+<div class="sparkle" style="top:30%;right:25%">⭐</div>
+<div class="sparkle" style="top:65%;left:20%">✨</div>
+<div class="sparkle" style="top:85%;right:20%">🌸</div>
+
+<main class="page">
+
+  <div class="tag">🎀 A LITTLE SURPRISE FOR YUYA FROM ARA 🎀</div>
+
+  <h1>Happy Birthday!</h1>
+  <div class="subtitle">Today is all about you, Yuya! ♡</div>
+
+  <div class="hero-art">
+    <div class="moon"></div>
+    <div class="bunny" onclick="sayHi()">🐰</div>
+    <div class="bow">🎀</div>
+  </div>
+
+  <div class="card">
+    <h2>Hiii, Birthday Girl! 💗</h2>
+    <p>
+      Seseorang yang manis sedang bertambah usia hari ini!
+      Semoga harimu semanis cotton candy,
+      secantik pita-pita kecil, dan seceria pelangi!
+    </p>
+    <button class="primary" onclick="celebrate()">LET'S CELEBRATE! 🎉</button>
+  </div>
+
+  <div class="card">
+    <h2>A little present for you 🎁</h2>
+    <p>Katanya ada sesuatu yang lucu di dalam sini...</p>
+    <div class="gift" onclick="openGift()" id="gift">🎁</div>
+    <p id="giftText" class="hidden">
+      SURPRIIIISE!! 💝<br>
+      Sending you a big virtual hug, a thousand smiles,
+      and unlimited happiness! 🧸
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Make a birthday wish! 🧁</h2>
+    <p>Pejamkan mata, buat satu harapan, lalu tiup lilinnya!</p>
+
+    <div class="cake">
+      <div class="candle">
+        <div class="flame" id="flame"></div>
+      </div>
+      <div class="cake-top"></div>
+      <div class="cake-body"></div>
+      <div class="cake-plate"></div>
+    </div>
+
+    <button class="secondary" onclick="blow()">Puffff! 💨</button>
+    <p id="wishText">May all your wishes come true! 🌷</p>
+  </div>
+
+  <div class="card">
+    <h2>One little letter for Yuya from Araa💌</h2>
+    <p>There's something I want you to read...</p>
+    <button class="primary" onclick="showLetter()">OPEN YOUR LETTER ♡</button>
+
+    <div class="letter hidden" id="letter">
+      Dear Yuya, 🎀
+
+      <br><br>
+      Happy birthday, Yuyaaa!! 🥳💗
+
+      <br><br>
+      Selamat bertambah usia untuk manusia manis satu ini!
+      Semoga di umur yang baru, kamu selalu dikelilingi
+      hal-hal baik, orang-orang tulus, dan alasan-alasan
+      kecil untuk terus tersenyum.
+
+      <br><br>
+      Semoga segala urusan kuliah PGSD di UNY dilancarkan.
+      Semoga tugas-tugasnya nggak bikin pusing tujuh keliling,
+      dosen-dosennya baik, dan semua cita-citamu
+      pelan-pelan menemukan jalannya.
+
+      <br><br>
+      Walaupun sekarang kita mungkin sudah sibuk dengan
+      dunia masing-masing, aku tetap berharap hal-hal baik
+      selalu datang ke hidupmu.
+
+      <br><br>
+      Jangan lupa bahagia, jangan terlalu keras sama diri
+      sendiri, dan tetap jadi Yuya yang manis dengan
+      segala keunikannya.
+
+      <br><br>
+      Remember, you deserve beautiful things,
+      beautiful days, and beautiful memories.
+
+      <br><br>
+      Sending you lots of love, hugs, and pink ribbons! 🎀
+
+      <br><br>
+      With love,<br>
+      <b>Araa ♡</b>
+    </div>
+  </div>
+
+  <div class="footer">
+    MADE WITH LOTS OF LOVE & RIBBONS FOR YUYA 🎀<br>
+    ♡ stay cute, stay happy ♡
+  </div>
+
+</main>
+
+<script>
+function sayHi() {
+  alert("Hewooo Yuyaaa! 🐰🎀 Happy birthday, cutieee!");
+}
+
+function celebrate() {
+  confetti();
+  alert("YAYYYY!! IT'S YOUR SPECIAL DAY!! 💗🎉");
+}
+
+function openGift() {
+  document.getElementById("gift").innerHTML = "💝";
+  document.getElementById("giftText").classList.remove("hidden");
+  confetti();
+}
+
+function blow() {
+  document.getElementById("flame").style.display = "none";
+  document.getElementById("wishText").innerHTML =
+    "YAY! Your wish has been sent to the universe! 🌟💗";
+  confetti();
+}
+
+function showLetter() {
+  document.getElementById("letter").classList.remove("hidden");
+  confetti();
+}
+
+function confetti() {
+  const items = ["🎀","💗","🌸","✨","⭐","🩷","🍬","🦋"];
+  for(let i=0;i<35;i++) {
+    const el = document.createElement("div");
+    el.className = "confetti";
+    el.innerHTML = items[Math.floor(Math.random()*items.length)];
+    el.style.left = Math.random()*100 + "vw";
+    el.style.fontSize = (16+Math.random()*22) + "px";
+    el.style.animationDuration = (2+Math.random()*3) + "s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),5000);
+  }
+}
+</script>
+
+</body>
+</html>
